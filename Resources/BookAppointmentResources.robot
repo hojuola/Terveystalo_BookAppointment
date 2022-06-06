@@ -1,9 +1,11 @@
 *** Settings ***
 Documentation    Suite description
 Library          Browser
+Library          SeleniumLibrary
 
 
 *** Variables ***
+${URL}                   https://ajanvaraus.terveystalo.com/en/
 ${BOOKYOURSELF}          //*[@id="book-for-yourself-btn"]/span
 ${HOMEPAGE_BOOKING}      //*[@id="root"]/div/main/div[1]/div/h1
 ${PRIVATECUSTOMERS}      //*[@id="book-for-yourself-content"]/div/ul/li[1]/a
@@ -24,7 +26,7 @@ ${SCROLL_ELEMENT}        //*[@id="root"]/div/main/div[1]/section
 *** Keywords ***
 Launch Browser and Navigate To Booking Page
     New Browser   chromium    headless=false
-    new page      https://ajanvaraus.terveystalo.com/en/
+    new page      ${URL}
     get text      ${HOMEPAGE_BOOKING}  ==  Booking
 
 Go To Book Appointment For Yourself
