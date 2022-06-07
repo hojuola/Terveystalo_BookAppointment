@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Suite description
 Library          Browser
-Library          SeleniumLibrary
+
 
 
 *** Variables ***
